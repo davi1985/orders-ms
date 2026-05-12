@@ -2,7 +2,7 @@
 
 Event-driven order management system built with Spring Boot, MongoDB, and RabbitMQ.
 
-## 📋 Table of Contents
+## Table of Contents
 
 - [Overview](#overview)
 - [Architecture](#architecture)
@@ -13,19 +13,19 @@ Event-driven order management system built with Spring Boot, MongoDB, and Rabbit
 - [API Endpoints](#api-endpoints)
 - [Data Model](#data-model)
 
-## 🎯 Overview
+## Overview
 
 **OrderMS** is a microservice responsible for managing customer orders. The system consumes order creation events via RabbitMQ, persists data in MongoDB, and provides REST APIs for querying orders and calculating totals per customer.
 
 ### Key Features
 
-- ✅ Order creation event consumption via RabbitMQ
-- ✅ Order persistence in MongoDB
-- ✅ Paginated order queries by customer
-- ✅ Total order value calculation per customer using MongoDB Aggregation
-- ✅ Automatic DTO mapping with MapStruct
+- Order creation event consumption via RabbitMQ
+- Order persistence in MongoDB
+- Paginated order queries by customer
+- Total order value calculation per customer using MongoDB Aggregation
+- Automatic DTO mapping with MapStruct
 
-## 🏗️ Architecture
+## Architecture
 
 ### System Architecture
 
@@ -74,7 +74,7 @@ Event-driven order management system built with Spring Boot, MongoDB, and Rabbit
 4. **Persistence**: `OrderService` saves the order to MongoDB via `OrderRepository`
 5. **Query**: REST APIs allow querying orders and totals
 
-## 🛠️ Technologies
+## Technologies
 
 ### Core
 
@@ -100,7 +100,7 @@ Event-driven order management system built with Spring Boot, MongoDB, and Rabbit
 
 - **Docker Compose** - Container orchestration (MongoDB + RabbitMQ)
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 src/main/java/tech/buildrun/btgpactual/orderms/
@@ -128,7 +128,7 @@ src/main/java/tech/buildrun/btgpactual/orderms/
     └── OrderService.java             # Business logic
 ```
 
-## 💡 Technical Decisions
+## Technical Decisions
 
 ### 1. **MongoDB as Database**
 
@@ -209,7 +209,7 @@ var aggregations = newAggregation(
 - Event accepts both `clientId` and `customerId`
 - Internal system uses only `customerId`
 
-## 🚀 Setup and Execution
+## Setup and Execution
 
 ### Prerequisites
 
@@ -250,7 +250,7 @@ The application will be available at `http://localhost:8080`
 curl http://localhost:8080/actuator/health
 ```
 
-## 📡 API Endpoints
+## API Endpoints
 
 ### List Orders by Customer
 
@@ -292,7 +292,7 @@ GET /customers/{customerId}/orders?page=0&pageSize=10
 }
 ```
 
-## 📊 Data Model
+## Data Model
 
 ### RabbitMQ Event: `OrderCreatedEvent`
 
@@ -344,7 +344,7 @@ GET /customers/{customerId}/orders?page=0&pageSize=10
 }
 ```
 
-## 🔧 Configuration
+## Configuration
 
 ### application.properties
 
@@ -381,7 +381,7 @@ services:
       - 5672:5672 # AMQP
 ```
 
-## 🧪 Testing the System
+## Testing the System
 
 ### 1. Publish Event to RabbitMQ
 
@@ -411,18 +411,12 @@ Access RabbitMQ Management: `http://localhost:15672`
 curl http://localhost:8080/customers/1/orders
 ```
 
-## 📈 Future Improvements
+## Future Improvements
 
 - [ ] Implement unit and integration tests
-- [ ] Add observability (Prometheus + Grafana)
-- [ ] Implement circuit breaker (Resilience4j)
-- [ ] Add authentication and authorization (Spring Security)
-- [ ] Implement API versioning
-- [ ] Add caching (Redis)
-- [ ] Implement Dead Letter Queue for failed messages
 - [ ] Add data validation with Bean Validation
 
-## 👥 Contributing
+## Contributing
 
 1. Fork the project
 2. Create a feature branch (`git checkout -b feature/new-feature`)
@@ -430,10 +424,10 @@ curl http://localhost:8080/customers/1/orders
 4. Push to the branch (`git push origin feature/new-feature`)
 5. Open a Pull Request
 
-## 📄 License
+## License
 
 This project is under the MIT license.
 
 ---
 
-**Built with ☕ and Java 21**
+**Built with Java 21**
