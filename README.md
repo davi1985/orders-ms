@@ -416,18 +416,4 @@ curl http://localhost:8080/customers/1/orders
 - [ ] Implement unit and integration tests
 - [ ] Add data validation with Bean Validation
 
-## Contributing
-
-1. Fork the project
-2. Create a feature branch (`git checkout -b feature/new-feature`)
-3. Commit your changes (`git commit -m 'Add new feature'`)
-4. Push to the branch (`git push origin feature/new-feature`)
-5. Open a Pull Request
-
-## License
-
-This project is under the MIT license.
-
----
-
 **Built with Java 21**
